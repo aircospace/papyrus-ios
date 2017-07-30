@@ -14,6 +14,7 @@ import UIKit
 import MultipeerConnectivity
 import NoChat
 import ReachabilitySwift
+import Alamofire
 
 class ChatViewController: NOCChatViewController, UINavigationControllerDelegate, MessageManagerDelegate, PapyrusChatInputTextPanelDelegate, PapyrusTextMessageCellDelegate {
     
@@ -102,10 +103,9 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
         let reachability = note.object as! Reachability
         
         if reachability.isReachable {
-            let alert = UIAlertController(title: "Test", message: "test", preferredStyle: .alert)
-            let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(okButton)
-            UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+            Alamofire.request("https://angelhack-sao-paulo.mybluemix.net/api/register-message", method: .post, parameters: ["user": "", "message": ""]).responseJSON(completionHandler: { (data) in
+                print("Sent to backend")
+            })
             if reachability.isReachableViaWiFi {
                 print("Reachable via WiFi")
             } else {

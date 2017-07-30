@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.5.0)
   - HPGrowingTextView (1.1)
   - NoChat (0.3.2)
   - NOCProtoKit (0.3.2)
@@ -6,6 +7,7 @@ PODS:
   - YYText (1.0.7)
 
 DEPENDENCIES:
+  - Alamofire
   - HPGrowingTextView
   - NoChat (~> 0.3)
   - NOCProtoKit (from `./`)
@@ -14,15 +16,16 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   NOCProtoKit:
-    :path: ./
+    :path: "./"
 
 SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   HPGrowingTextView: 88a716d97fb853bcb08a4a08e4727da17efc9b19
   NoChat: aaa980b8b29c0db8c8bd8ecde22e718cc8ad1bf7
   NOCProtoKit: 1eed77c8f171953c6632fbad8bc1d6f6ebf6b718
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 89ff136a86a6309ff426c82f08c2ac81b3c06127
+PODFILE CHECKSUM: 31cbb1db62cdec8fc7dad35f4a3104ad21785cf6
 
 COCOAPODS: 1.2.1
