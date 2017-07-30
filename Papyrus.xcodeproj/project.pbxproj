@@ -14,7 +14,6 @@
 		575506681F2D9641009E59A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575506641F2D95C5009E59A3 /* LaunchScreen.storyboard */; };
 		575506691F2D9641009E59A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575506661F2D95C5009E59A3 /* Main.storyboard */; };
 		57BDABCE1F2D31000098CC5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BDABCD1F2D31000098CC5A /* AppDelegate.swift */; };
-		57BDABD01F2D31000098CC5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BDABCF1F2D31000098CC5A /* ViewController.swift */; };
 		57BDABD51F2D31000098CC5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57BDABD41F2D31000098CC5A /* Assets.xcassets */; };
 		B3F13B56CA0A8A37A85BEC55 /* Pods_Papyrus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B242F955EE288B47B581A341 /* Pods_Papyrus.framework */; };
 /* End PBXBuildFile section */
@@ -29,7 +28,6 @@
 		575506671F2D95C5009E59A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57BDABCA1F2D31000098CC5A /* Papyrus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Papyrus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BDABCD1F2D31000098CC5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		57BDABCF1F2D31000098CC5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		57BDABD41F2D31000098CC5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57BDABD91F2D31000098CC5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A8A11DC65521E82CE6F1E37 /* Pods-Papyrus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papyrus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Papyrus/Pods-Papyrus.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,7 +73,6 @@
 				575506621F2D85FA009E59A3 /* MCManager.swift */,
 				575400C11F2DB58900B002B8 /* ContactViewController.swift */,
 				575400C31F2DC2F300B002B8 /* ContactCell.swift */,
-				57BDABCF1F2D31000098CC5A /* ViewController.swift */,
 				57BDABCD1F2D31000098CC5A /* AppDelegate.swift */,
 				57BDABD41F2D31000098CC5A /* Assets.xcassets */,
 				57BDABD91F2D31000098CC5A /* Info.plist */,
@@ -223,7 +220,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				575400C41F2DC2F300B002B8 /* ContactCell.swift in Sources */,
-				57BDABD01F2D31000098CC5A /* ViewController.swift in Sources */,
 				575400C61F2DC35800B002B8 /* RoundedView.swift in Sources */,
 				575400C21F2DB58900B002B8 /* ContactViewController.swift in Sources */,
 				57BDABCE1F2D31000098CC5A /* AppDelegate.swift in Sources */,
