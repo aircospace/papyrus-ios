@@ -18,21 +18,11 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
     
     var titleView = PapyrusTextView()
     var avatarButton = PapyrusAvatarButton()
-    
+    var targetID: String!
     var messageManager = MessageManager.manager
     var layoutQueue = DispatchQueue(label: "com.little2s.nochat-example.tg.layout", qos: DispatchQoS(qosClass: .default, relativePriority: 0))
     
-    var mcManager: MCManager!
-    
-    let chat: Chat = {
-        let chat = Chat()
-        chat.type = "bot"
-        chat.targetId = "89757"
-        chat.chatId = chat.type + "_" + chat.targetId
-        chat.title = "Papyrus message"
-        chat.detail = "nearby"
-        return chat
-    }()
+    var chat: Chat!
     
     // MARK: Overrides
     
@@ -66,6 +56,13 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.chat = Chat()
+        self.chat.type = "text"
+        self.chat.targetId = "\(self.targetID.characters.count)"
+        self.chat.chatId = chat.type + "_" + chat.targetId
+        self.chat.title = self.targetID!
+        self.chat.detail = "nearby"
+
         messageManager.addDelegate(self)
         registerContentSizeCategoryDidChangeNotification()
         setupNavigationItems()
@@ -75,8 +72,6 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
         navigationController?.delegate = self
         
         loadMessages()
-        self.mcManager = MCManager()
-        self.mcManager.start()
     }
     
     // MARK: PapyrusChatInputTextPanelDelegate
@@ -281,7 +276,7 @@ extension ChatViewController: MCManagerDelegate {
     func foundPeer() {
         messageManager.fetchMessages(withChatId: chat.chatId) { [weak self] (msgs) in
             if let strongSelf = self {
-                self?.mcManager.sendText(text: (msgs.last?.text)!)
+//                self?.mcManager.sendText(text: (msgs.last?.text)!)
             }
         }
     }

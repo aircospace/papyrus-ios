@@ -18,6 +18,7 @@ protocol MCManagerDelegate {
 
 class MCManager: NSObject {
     
+    static let shared = MCManager()
     let session = MCSession(peer: MCPeerID(displayName: UIDevice.current.name))
     var browser: MCNearbyServiceBrowser?
     var advertiser: MCNearbyServiceAdvertiser?

@@ -13,6 +13,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! ChatViewController//MCManager.shared.foundPeers.last?.displayName
+        vc.targetID = (MCManager.shared.foundPeers.last?.displayName)!
+    }
 }
 
 
