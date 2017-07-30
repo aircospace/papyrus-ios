@@ -35,12 +35,23 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! HomeCell
+        cell.profileImageView.image = UIImage(named: "profile\(indexPath.row)")
+        switch indexPath.row {
+        case 0:
+            cell.nameLabel.text = "Jean Paul Marinho"
+        case 1:
+            cell.nameLabel.text = "Matheus Catossi"
+        case 2:
+            cell.nameLabel.text = "Victor Shynia"
+        default:
+            cell.nameLabel.text = "Carol"
+        }
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -32,7 +32,7 @@
         <scene sceneID="E0V-ah-ICR">
             <objects>
                 <viewController id="7pc-hL-lwz" customClass="HomeViewController" customModule="Papyrus" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="405-dq-iFf">
+                    <view key="view" contentMode="scaleToFill" id="405-dq-iFf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -40,14 +40,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="nbW-18-mE6">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="nbW-18-mE6" customClass="HomeCell" customModule="Papyrus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nbW-18-mE6" id="FBU-9B-pkr">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="Y4V-Jq-HAC" customClass="RoundedView" customModule="Papyrus" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="Y4V-Jq-HAC" customClass="RoundedView" customModule="Papyrus" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="12" width="75" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="75" id="Dc9-bE-tke"/>
@@ -83,6 +83,10 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="BmU-2R-Wyk" secondAttribute="bottom" constant="23.5" id="z34-nc-CyM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="9GV-jo-sAy" id="AR7-9s-to7"/>
+                                            <outlet property="profileImageView" destination="Y4V-Jq-HAC" id="hni-lT-JQh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

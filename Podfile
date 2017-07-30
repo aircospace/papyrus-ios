@@ -11,4 +11,5 @@ target 'Papyrus' do
   pod 'YYText'
   pod 'HPGrowingTextView'
   pod 'ReachabilitySwift'
+  pod 'Alamofire'
 end

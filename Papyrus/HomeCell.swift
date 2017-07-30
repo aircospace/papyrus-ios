@@ -8,8 +8,13 @@
 
 import UIKit
 
-class ContactCell: UITableViewCell {
-
+class HomeCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var profileImageView: RoundedView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
