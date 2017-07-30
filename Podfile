@@ -6,4 +6,9 @@ target 'Papyrus' do
   use_frameworks!
 
   # Pods for Papyrus
+  pod 'NoChat', '~> 0.3'
+  pod 'NOCProtoKit', :path => './'
+  pod 'YYText'
+  pod 'HPGrowingTextView'
+
 end
