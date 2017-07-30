@@ -9,17 +9,34 @@
 import UIKit
 import MultipeerConnectivity
 
+protocol MCManagerDelegate {
+    
+    func foundPeer()
+    func lostPeer()
+    func invitationWasReceived(peer: MCPeerID)
+    func connectedWithPeer(peer: MCPeerID)
+}
+
 class MCManager: NSObject {
     
+    static let shared = MCManager()
     var session: MCSession!
     var peer: MCPeerID!
     var browser: MCNearbyServiceBrowser!
     var advertiser: MCNearbyServiceAdvertiser!
     var foundPeers = [MCPeerID]()
     var invitationHandler: ((Bool, MCSession?)->Void)!
+    let serviceType = "com.akanj-papyrus"
+    var delegate: MCManagerDelegate?
     
     override init() {
+        super.init()
         self.peer = MCPeerID(displayName: UIDevice.current.name)
+        self.session = MCSession(peer: self.peer)
+        self.browser = MCNearbyServiceBrowser(peer: self.peer, serviceType: serviceType)
+        self.browser.delegate = self
+        self.advertiser = MCNearbyServiceAdvertiser(peer: self.peer, discoveryInfo: nil, serviceType: serviceType)
+        
     }
 }
 
@@ -30,12 +47,30 @@ class MCManager: NSObject {
 //
 //
 //
-//extension MCManager: MCNearbyServiceBrowserDelegate {
-//    
-//}
-//
-//
-//
+extension MCManager: MCNearbyServiceBrowserDelegate {
+    
+    func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
+        self.foundPeers.append(peerID)
+        self.delegate?.foundPeer()
+    }
+    
+    func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
+        for (index, value) in self.foundPeers.enumerated() {
+            if value == peerID {
+                self.foundPeers.remove(at: index)
+                break
+            }
+        }
+        self.delegate?.lostPeer()
+    }
+    
+    func browser(_ browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: Error) {
+        print(error.localizedDescription)
+    }
+}
+
+
+
 //extension MCManager: MCNearbyServiceAdvertiserDelegate {
 //    
 //}
