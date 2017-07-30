@@ -22,6 +22,8 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
     var messageManager = MessageManager.manager
     var layoutQueue = DispatchQueue(label: "com.little2s.nochat-example.tg.layout", qos: DispatchQoS(qosClass: .default, relativePriority: 0))
     
+    var mcManager: MCManager!
+    
     let chat: Chat = {
         let chat = Chat()
         chat.type = "bot"
@@ -73,6 +75,8 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
         navigationController?.delegate = self
         
         loadMessages()
+        self.mcManager = MCManager()
+        self.mcManager.start()
     }
     
     // MARK: PapyrusChatInputTextPanelDelegate
@@ -267,5 +271,26 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
         }
         
         return (itemIndex, itemOriginY, itemOffset, itemHeight)
+    }
+}
+
+
+
+extension ChatViewController: MCManagerDelegate {
+    
+    func foundPeer() {
+        messageManager.fetchMessages(withChatId: chat.chatId) { [weak self] (msgs) in
+            if let strongSelf = self {
+                self?.mcManager.sendText(text: (msgs.last?.text)!)
+            }
+        }
+    }
+    
+    func lostPeer() {
+        
+    }
+    
+    func receivedText(text: String) {
+        
     }
 }
