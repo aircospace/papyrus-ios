@@ -21,7 +21,8 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
     var targetID: String!
     var messageManager = MessageManager.manager
     var layoutQueue = DispatchQueue(label: "com.little2s.nochat-example.tg.layout", qos: DispatchQoS(qosClass: .default, relativePriority: 0))
-    
+    var messageToSend: String?
+    var hasSent = true
     var chat: Chat!
     
     // MARK: Overrides
@@ -55,7 +56,7 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        MCManager.shared.delegate = self
         self.chat = Chat()
         self.chat.type = "text"
         self.chat.targetId = "\(self.targetID.characters.count)"
@@ -80,6 +81,8 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
         let msg = Message()
         msg.text = text
         sendMessage(msg)
+        self.messageToSend = text
+        self.peerSend()
     }
     
     // MARK: PapyrusTextMessageCellDelegate
@@ -183,6 +186,10 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
     
     // MARK: Dynamic font support
     
+    func peerSend() {
+        MCManager.shared.sendText(text: self.messageToSend!)
+    }
+    
     private func registerContentSizeCategoryDidChangeNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleContentSizeCategoryDidChanged(notification:)), name: .UIContentSizeCategoryDidChange, object: nil)
     }
@@ -274,10 +281,9 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
 extension ChatViewController: MCManagerDelegate {
     
     func foundPeer() {
-        messageManager.fetchMessages(withChatId: chat.chatId) { [weak self] (msgs) in
-            if let strongSelf = self {
-//                self?.mcManager.sendText(text: (msgs.last?.text)!)
-            }
+        if self.hasSent == false {
+            self.peerSend()
+            self.hasSent = true
         }
     }
     
@@ -286,6 +292,12 @@ extension ChatViewController: MCManagerDelegate {
     }
     
     func receivedText(text: String) {
-        
+        let msg = Message()
+        msg.text = text
+        messageManager.fetchMessages(withChatId: self.chat.chatId) { (messages) in
+            var newMessages = messages
+            newMessages.append(msg)
+            self.addMessages(newMessages, scrollToBottom: true, animated: true)
+        }
     }
 }

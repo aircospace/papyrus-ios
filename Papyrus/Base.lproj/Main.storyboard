@@ -54,27 +54,33 @@
                                                         <constraint firstAttribute="width" secondItem="Y4V-Jq-HAC" secondAttribute="height" multiplier="1:1" id="wBk-SE-jtd"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Jean Paul Marinho" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GV-jo-sAy">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jean Paul Marinho" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GV-jo-sAy">
                                                     <rect key="frame" x="91" y="12" width="254" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="DJd-kg-tIt"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BmU-2R-Wyk">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BmU-2R-Wyk">
                                                     <rect key="frame" x="95" y="41" width="250" height="27"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="9GV-jo-sAy" firstAttribute="leading" secondItem="Y4V-Jq-HAC" secondAttribute="trailing" constant="8" symbolic="YES" id="0Qt-9p-khI"/>
-                                                <constraint firstItem="9GV-jo-sAy" firstAttribute="trailing" secondItem="FBU-9B-pkr" secondAttribute="trailingMargin" id="0is-It-S5y"/>
-                                                <constraint firstItem="Y4V-Jq-HAC" firstAttribute="centerY" secondItem="9GV-jo-sAy" secondAttribute="centerY" id="47q-SO-pnP"/>
+                                                <constraint firstItem="BmU-2R-Wyk" firstAttribute="leading" secondItem="Y4V-Jq-HAC" secondAttribute="trailing" constant="12" id="3rR-Ha-D4k"/>
+                                                <constraint firstItem="9GV-jo-sAy" firstAttribute="leading" secondItem="Y4V-Jq-HAC" secondAttribute="trailing" constant="8" symbolic="YES" id="Ac5-dA-HM9"/>
+                                                <constraint firstItem="9GV-jo-sAy" firstAttribute="trailing" secondItem="BmU-2R-Wyk" secondAttribute="trailing" id="CeS-vQ-03U"/>
+                                                <constraint firstItem="BmU-2R-Wyk" firstAttribute="top" secondItem="9GV-jo-sAy" secondAttribute="bottom" constant="8" symbolic="YES" id="EDa-8L-gD1"/>
                                                 <constraint firstItem="Y4V-Jq-HAC" firstAttribute="top" secondItem="FBU-9B-pkr" secondAttribute="topMargin" constant="4" id="Qbv-3X-pO0"/>
                                                 <constraint firstItem="Y4V-Jq-HAC" firstAttribute="centerY" secondItem="FBU-9B-pkr" secondAttribute="centerY" id="c5T-ie-wrr"/>
                                                 <constraint firstItem="Y4V-Jq-HAC" firstAttribute="leading" secondItem="FBU-9B-pkr" secondAttribute="leadingMargin" id="cez-TE-OBZ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="9GV-jo-sAy" secondAttribute="trailing" constant="22" id="clf-i7-eAw"/>
+                                                <constraint firstItem="9GV-jo-sAy" firstAttribute="top" secondItem="Y4V-Jq-HAC" secondAttribute="top" id="vYo-JL-uzU"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="BmU-2R-Wyk" secondAttribute="bottom" constant="23.5" id="z34-nc-CyM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
