@@ -10,5 +10,5 @@ target 'Papyrus' do
   pod 'NOCProtoKit', :path => './'
   pod 'YYText'
   pod 'HPGrowingTextView'
-
+  pod 'ReachabilitySwift'
 end

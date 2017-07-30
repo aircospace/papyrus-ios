@@ -13,6 +13,7 @@
 import UIKit
 import MultipeerConnectivity
 import NoChat
+import ReachabilitySwift
 
 class ChatViewController: NOCChatViewController, UINavigationControllerDelegate, MessageManagerDelegate, PapyrusChatInputTextPanelDelegate, PapyrusTextMessageCellDelegate {
     
@@ -24,7 +25,8 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
     var messageToSend: String?
     var hasSent = true
     var chat: Chat!
-    
+    let reachability = Reachability()!
+
     // MARK: Overrides
     
     override class func cellLayoutClass(forItemType type: String) -> Swift.AnyClass? {
@@ -75,6 +77,16 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
         loadMessages()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: ReachabilityChangedNotification,object: reachability)
+        do{
+            try reachability.startNotifier()
+        }catch{
+            print("could not start reachability notifier")
+        }
+    }
+    
     // MARK: PapyrusChatInputTextPanelDelegate
     
     func inputTextPanel(_ inputTextPanel: PapyrusChatInputTextPanel, requestSendText text: String) {
@@ -83,6 +95,25 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
         sendMessage(msg)
         self.messageToSend = text
         self.peerSend()
+    }
+    
+    @objc func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as! Reachability
+        
+        if reachability.isReachable {
+            let alert = UIAlertController(title: "Test", message: "test", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okButton)
+            UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+            if reachability.isReachableViaWiFi {
+                print("Reachable via WiFi")
+            } else {
+                print("Reachable via Cellular")
+            }
+        } else {
+            print("Network not reachable")
+        }
     }
     
     // MARK: PapyrusTextMessageCellDelegate
@@ -274,6 +305,8 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
         
         return (itemIndex, itemOriginY, itemOffset, itemHeight)
     }
+    
+    
 }
 
 
