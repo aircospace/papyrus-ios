@@ -68,6 +68,23 @@ extension ViewController: MCManagerDelegate {
     }
     
     func invitationWasReceived(peer: MCPeerID) {
+        
+        let alert = UIAlertController(title: "", message: "\(peer.displayName) wants to chat with you.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let acceptAction: UIAlertAction = UIAlertAction(title: "Accept", style: UIAlertActionStyle.default) { (alertAction) -> Void in
+            MCManager.shared.invitationHandler(true, MCManager.shared.session)
+        }
+        
+        let declineAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (alertAction) -> Void in
+            MCManager.shared.invitationHandler(false, nil)
+        }
+        
+        alert.addAction(acceptAction)
+        alert.addAction(declineAction)
+        
+        OperationQueue.main.addOperation { () -> Void in
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func connectedWithPeer(peer: MCPeerID) {

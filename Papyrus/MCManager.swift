@@ -36,7 +36,7 @@ class MCManager: NSObject {
         self.browser = MCNearbyServiceBrowser(peer: self.peer, serviceType: serviceType)
         self.browser.delegate = self
         self.advertiser = MCNearbyServiceAdvertiser(peer: self.peer, discoveryInfo: nil, serviceType: serviceType)
-        
+        self.advertiser.delegate = self
     }
 }
 
