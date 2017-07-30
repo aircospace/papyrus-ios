@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2212842B1F2DE5340045D03C /* PapyrusTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2212842A1F2DE5340045D03C /* PapyrusTextView.swift */; };
+		2212842D1F2DE5970045D03C /* PapyrusAvatarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2212842C1F2DE5970045D03C /* PapyrusAvatarButton.swift */; };
+		2212842F1F2DE5F70045D03C /* PapyrusChatInputTextPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2212842E1F2DE5F70045D03C /* PapyrusChatInputTextPanel.swift */; };
+		221284321F2DE7740045D03C /* PapyrusDateMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221284311F2DE7740045D03C /* PapyrusDateMessageCell.swift */; };
+		221284341F2DE7BD0045D03C /* PapyrusDateMessageCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221284331F2DE7BD0045D03C /* PapyrusDateMessageCellLayout.swift */; };
+		221284361F2DE86E0045D03C /* PapyrusBaseMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221284351F2DE86E0045D03C /* PapyrusBaseMessageCell.swift */; };
+		221284381F2DE8BA0045D03C /* PapyrusBaseMessageCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221284371F2DE8BA0045D03C /* PapyrusBaseMessageCellLayout.swift */; };
+		2212843A1F2DE9200045D03C /* PapyrusTextMessageCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221284391F2DE9200045D03C /* PapyrusTextMessageCellLayout.swift */; };
+		2212843C1F2DEA1A0045D03C /* PapyrusSystemMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2212843B1F2DEA1A0045D03C /* PapyrusSystemMessageCell.swift */; };
+		2212843E1F2DEAAC0045D03C /* PapyrusSystemMessageCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2212843D1F2DEAAC0045D03C /* PapyrusSystemMessageCellLayout.swift */; };
+		221284401F2DEB520045D03C /* PapyrusTextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2212843F1F2DEB520045D03C /* PapyrusTextMessageCell.swift */; };
+		221284421F2DEC270045D03C /* PapyrusDeliveryStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221284411F2DEC270045D03C /* PapyrusDeliveryStatusView.swift */; };
+		221284441F2DEC4C0045D03C /* PapyrusClockProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221284431F2DEC4C0045D03C /* PapyrusClockProgressView.swift */; };
+		221284471F2DEE470045D03C /* UIFont+NoChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221284461F2DEE470045D03C /* UIFont+NoChat.swift */; };
+		221284491F2DEE6B0045D03C /* NSAttributedString+NoChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221284481F2DEE6B0045D03C /* NSAttributedString+NoChat.swift */; };
+		2212844B1F2DF03D0045D03C /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2212844A1F2DF03D0045D03C /* MessageManager.swift */; };
+		2212844D1F2DF0610045D03C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2212844C1F2DF0610045D03C /* Message.swift */; };
+		221284511F2DF2450045D03C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2212844E1F2DF2450045D03C /* User.swift */; };
+		221284521F2DF2450045D03C /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2212844F1F2DF2450045D03C /* SoundManager.swift */; };
+		221284531F2DF2450045D03C /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221284501F2DF2450045D03C /* Chat.swift */; };
+		2290EBEA1F2DBBDA0099A505 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290EBE91F2DBBDA0099A505 /* ChatViewController.swift */; };
 		575400C21F2DB58900B002B8 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575400C11F2DB58900B002B8 /* ContactViewController.swift */; };
 		575400C41F2DC2F300B002B8 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575400C31F2DC2F300B002B8 /* ContactCell.swift */; };
 		575400C61F2DC35800B002B8 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575400C51F2DC35800B002B8 /* RoundedView.swift */; };
@@ -19,6 +40,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2212842A1F2DE5340045D03C /* PapyrusTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapyrusTextView.swift; sourceTree = "<group>"; };
+		2212842C1F2DE5970045D03C /* PapyrusAvatarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapyrusAvatarButton.swift; sourceTree = "<group>"; };
+		2212842E1F2DE5F70045D03C /* PapyrusChatInputTextPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapyrusChatInputTextPanel.swift; sourceTree = "<group>"; };
+		221284311F2DE7740045D03C /* PapyrusDateMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapyrusDateMessageCell.swift; sourceTree = "<group>"; };
+		221284331F2DE7BD0045D03C /* PapyrusDateMessageCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapyrusDateMessageCellLayout.swift; sourceTree = "<group>"; };
+		221284351F2DE86E0045D03C /* PapyrusBaseMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapyrusBaseMessageCell.swift; sourceTree = "<group>"; };
+		221284371F2DE8BA0045D03C /* PapyrusBaseMessageCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapyrusBaseMessageCellLayout.swift; sourceTree = "<group>"; };
+		221284391F2DE9200045D03C /* PapyrusTextMessageCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapyrusTextMessageCellLayout.swift; sourceTree = "<group>"; };
+		2212843B1F2DEA1A0045D03C /* PapyrusSystemMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapyrusSystemMessageCell.swift; sourceTree = "<group>"; };
+		2212843D1F2DEAAC0045D03C /* PapyrusSystemMessageCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapyrusSystemMessageCellLayout.swift; sourceTree = "<group>"; };
+		2212843F1F2DEB520045D03C /* PapyrusTextMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapyrusTextMessageCell.swift; sourceTree = "<group>"; };
+		221284411F2DEC270045D03C /* PapyrusDeliveryStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapyrusDeliveryStatusView.swift; sourceTree = "<group>"; };
+		221284431F2DEC4C0045D03C /* PapyrusClockProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapyrusClockProgressView.swift; sourceTree = "<group>"; };
+		221284461F2DEE470045D03C /* UIFont+NoChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+NoChat.swift"; sourceTree = "<group>"; };
+		221284481F2DEE6B0045D03C /* NSAttributedString+NoChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+NoChat.swift"; sourceTree = "<group>"; };
+		2212844A1F2DF03D0045D03C /* MessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
+		2212844C1F2DF0610045D03C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		2212844E1F2DF2450045D03C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2212844F1F2DF2450045D03C /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		221284501F2DF2450045D03C /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		2290EBE91F2DBBDA0099A505 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		5178FCB2A3A699872DA4CCC4 /* Pods-Papyrus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papyrus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Papyrus/Pods-Papyrus.debug.xcconfig"; sourceTree = "<group>"; };
 		575400C11F2DB58900B002B8 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		575400C31F2DC2F300B002B8 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
@@ -46,6 +88,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		221284291F2DE5070045D03C /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				221284451F2DEE300045D03C /* Extension */,
+				221284301F2DE75A0045D03C /* Cell */,
+				2212842A1F2DE5340045D03C /* PapyrusTextView.swift */,
+				2212842C1F2DE5970045D03C /* PapyrusAvatarButton.swift */,
+				2212842E1F2DE5F70045D03C /* PapyrusChatInputTextPanel.swift */,
+				221284411F2DEC270045D03C /* PapyrusDeliveryStatusView.swift */,
+				2212844A1F2DF03D0045D03C /* MessageManager.swift */,
+				2212844C1F2DF0610045D03C /* Message.swift */,
+				221284501F2DF2450045D03C /* Chat.swift */,
+				2212844F1F2DF2450045D03C /* SoundManager.swift */,
+				2212844E1F2DF2450045D03C /* User.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		221284301F2DE75A0045D03C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				221284311F2DE7740045D03C /* PapyrusDateMessageCell.swift */,
+				221284331F2DE7BD0045D03C /* PapyrusDateMessageCellLayout.swift */,
+				221284351F2DE86E0045D03C /* PapyrusBaseMessageCell.swift */,
+				221284371F2DE8BA0045D03C /* PapyrusBaseMessageCellLayout.swift */,
+				2212843B1F2DEA1A0045D03C /* PapyrusSystemMessageCell.swift */,
+				2212843D1F2DEAAC0045D03C /* PapyrusSystemMessageCellLayout.swift */,
+				2212843F1F2DEB520045D03C /* PapyrusTextMessageCell.swift */,
+				221284391F2DE9200045D03C /* PapyrusTextMessageCellLayout.swift */,
+				221284431F2DEC4C0045D03C /* PapyrusClockProgressView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		221284451F2DEE300045D03C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				221284461F2DEE470045D03C /* UIFont+NoChat.swift */,
+				221284481F2DEE6B0045D03C /* NSAttributedString+NoChat.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		57BDABC11F2D31000098CC5A = {
 			isa = PBXGroup;
 			children = (
@@ -67,12 +152,14 @@
 		57BDABCC1F2D31000098CC5A /* Papyrus */ = {
 			isa = PBXGroup;
 			children = (
+				221284291F2DE5070045D03C /* Chat */,
 				575506641F2D95C5009E59A3 /* LaunchScreen.storyboard */,
 				575506661F2D95C5009E59A3 /* Main.storyboard */,
 				575400C51F2DC35800B002B8 /* RoundedView.swift */,
 				575506621F2D85FA009E59A3 /* MCManager.swift */,
 				575400C11F2DB58900B002B8 /* ContactViewController.swift */,
 				575400C31F2DC2F300B002B8 /* ContactCell.swift */,
+				2290EBE91F2DBBDA0099A505 /* ChatViewController.swift */,
 				57BDABCD1F2D31000098CC5A /* AppDelegate.swift */,
 				57BDABD41F2D31000098CC5A /* Assets.xcassets */,
 				57BDABD91F2D31000098CC5A /* Info.plist */,
@@ -132,6 +219,7 @@
 				TargetAttributes = {
 					57BDABC91F2D31000098CC5A = {
 						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -221,9 +309,30 @@
 			files = (
 				575400C41F2DC2F300B002B8 /* ContactCell.swift in Sources */,
 				575400C61F2DC35800B002B8 /* RoundedView.swift in Sources */,
+				2212842B1F2DE5340045D03C /* PapyrusTextView.swift in Sources */,
+				221284341F2DE7BD0045D03C /* PapyrusDateMessageCellLayout.swift in Sources */,
+				221284531F2DF2450045D03C /* Chat.swift in Sources */,
+				221284381F2DE8BA0045D03C /* PapyrusBaseMessageCellLayout.swift in Sources */,
+				2212843A1F2DE9200045D03C /* PapyrusTextMessageCellLayout.swift in Sources */,
+				221284401F2DEB520045D03C /* PapyrusTextMessageCell.swift in Sources */,
+				221284421F2DEC270045D03C /* PapyrusDeliveryStatusView.swift in Sources */,
+				221284441F2DEC4C0045D03C /* PapyrusClockProgressView.swift in Sources */,
+				2212842D1F2DE5970045D03C /* PapyrusAvatarButton.swift in Sources */,
+				2212843E1F2DEAAC0045D03C /* PapyrusSystemMessageCellLayout.swift in Sources */,
+				221284491F2DEE6B0045D03C /* NSAttributedString+NoChat.swift in Sources */,
+				221284321F2DE7740045D03C /* PapyrusDateMessageCell.swift in Sources */,
+				2212842F1F2DE5F70045D03C /* PapyrusChatInputTextPanel.swift in Sources */,
 				575400C21F2DB58900B002B8 /* ContactViewController.swift in Sources */,
 				57BDABCE1F2D31000098CC5A /* AppDelegate.swift in Sources */,
+				2290EBEA1F2DBBDA0099A505 /* ChatViewController.swift in Sources */,
+				221284361F2DE86E0045D03C /* PapyrusBaseMessageCell.swift in Sources */,
+				221284521F2DF2450045D03C /* SoundManager.swift in Sources */,
+				2212844D1F2DF0610045D03C /* Message.swift in Sources */,
 				575506631F2D85FA009E59A3 /* MCManager.swift in Sources */,
+				2212844B1F2DF03D0045D03C /* MessageManager.swift in Sources */,
+				221284471F2DEE470045D03C /* UIFont+NoChat.swift in Sources */,
+				2212843C1F2DEA1A0045D03C /* PapyrusSystemMessageCell.swift in Sources */,
+				221284511F2DF2450045D03C /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,12 +470,15 @@
 			baseConfigurationReference = 5178FCB2A3A699872DA4CCC4 /* Pods-Papyrus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6F983ZW9E9;
 				INFOPLIST_FILE = Papyrus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akanj.wildcard3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -377,12 +489,15 @@
 			baseConfigurationReference = 5A8A11DC65521E82CE6F1E37 /* Pods-Papyrus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6F983ZW9E9;
 				INFOPLIST_FILE = Papyrus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akanj.wildcard3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

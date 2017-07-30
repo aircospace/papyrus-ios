@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A610E27930A60CEA814A0224FA094F4C"
+               BlueprintIdentifier = "46EE86432451FE94B27874F716BF26CB"
                BuildableName = "Pods_Papyrus.framework"
                BlueprintName = "Pods-Papyrus"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A610E27930A60CEA814A0224FA094F4C"
+            BlueprintIdentifier = "46EE86432451FE94B27874F716BF26CB"
             BuildableName = "Pods_Papyrus.framework"
             BlueprintName = "Pods-Papyrus"
             ReferencedContainer = "container:Pods.xcodeproj">
