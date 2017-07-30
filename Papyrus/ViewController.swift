@@ -30,12 +30,6 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     
-}
-
-
-
-extension ViewController: UITableViewDelegate {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -48,6 +42,17 @@ extension ViewController: UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         cell?.textLabel?.text = MCManager.shared.foundPeers[indexPath.row].displayName
         return cell!
+    }
+}
+
+
+
+extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedPeer = MCManager.shared.foundPeers[indexPath.row] as MCPeerID
+        MCManager.shared.browser.invitePeer(selectedPeer, to: MCManager.shared.session, withContext: nil, timeout: 20)
     }
 }
 

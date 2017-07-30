@@ -71,7 +71,12 @@ extension MCManager: MCNearbyServiceBrowserDelegate {
 
 
 
-//extension MCManager: MCNearbyServiceAdvertiserDelegate {
-//    
-//}
+extension MCManager: MCNearbyServiceAdvertiserDelegate {
+    
+    func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
+        self.invitationHandler = invitationHandler
+        self.delegate?.invitationWasReceived(peer: peerID)
+    }
+    
+}
 

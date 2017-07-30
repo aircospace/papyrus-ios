@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		575400C21F2DB58900B002B8 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575400C11F2DB58900B002B8 /* ContactViewController.swift */; };
 		575506631F2D85FA009E59A3 /* MCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575506621F2D85FA009E59A3 /* MCManager.swift */; };
 		575506681F2D9641009E59A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575506641F2D95C5009E59A3 /* LaunchScreen.storyboard */; };
 		575506691F2D9641009E59A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575506661F2D95C5009E59A3 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		5178FCB2A3A699872DA4CCC4 /* Pods-Papyrus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papyrus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Papyrus/Pods-Papyrus.debug.xcconfig"; sourceTree = "<group>"; };
+		575400C11F2DB58900B002B8 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		575506621F2D85FA009E59A3 /* MCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCManager.swift; sourceTree = "<group>"; };
 		575506651F2D95C5009E59A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		575506671F2D95C5009E59A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				575506641F2D95C5009E59A3 /* LaunchScreen.storyboard */,
 				575506661F2D95C5009E59A3 /* Main.storyboard */,
 				575506621F2D85FA009E59A3 /* MCManager.swift */,
+				575400C11F2DB58900B002B8 /* ContactViewController.swift */,
 				57BDABCF1F2D31000098CC5A /* ViewController.swift */,
 				57BDABCD1F2D31000098CC5A /* AppDelegate.swift */,
 				57BDABD41F2D31000098CC5A /* Assets.xcassets */,
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BDABD01F2D31000098CC5A /* ViewController.swift in Sources */,
+				575400C21F2DB58900B002B8 /* ContactViewController.swift in Sources */,
 				57BDABCE1F2D31000098CC5A /* AppDelegate.swift in Sources */,
 				575506631F2D85FA009E59A3 /* MCManager.swift in Sources */,
 			);
