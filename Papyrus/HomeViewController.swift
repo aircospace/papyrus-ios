@@ -15,8 +15,16 @@ class HomeViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! ChatViewController//MCManager.shared.foundPeers.last?.displayName
-        vc.targetID = (MCManager.shared.foundPeers.last?.displayName)!
+        let vc = segue.destination as! ChatViewController
+        vc.targetID = (sender! as! [String : Any])["name"] as! String
+        vc.profileImageView = (sender! as! [String : Any])["image"] as! UIImage
+        let isDestination = (sender! as! [String : Any])["isDestination"] as! Int
+        if isDestination == 0 {
+            vc.isDestination = true
+        }
+        else {
+            vc.isDestination = false
+        }
     }
 }
 
@@ -55,6 +63,8 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "ToChatVC", sender: nil)
+        let cell = tableView.cellForRow(at: indexPath) as! HomeCell
+        let dic = ["image":cell.profileImageView.image as Any, "name":cell.nameLabel.text!, "isDestination":indexPath.row] as [String : Any]
+        self.performSegue(withIdentifier: "ToChatVC", sender: dic)
     }
 }

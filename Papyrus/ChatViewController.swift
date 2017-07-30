@@ -20,13 +20,16 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
     var titleView = PapyrusTextView()
     var avatarButton = PapyrusAvatarButton()
     var targetID: String!
+    var profileImageView: UIImage!
     var messageManager = MessageManager.manager
     var layoutQueue = DispatchQueue(label: "com.little2s.nochat-example.tg.layout", qos: DispatchQoS(qosClass: .default, relativePriority: 0))
     var messageToSend: String?
     var hasSent = true
     var chat: Chat!
     let reachability = Reachability()!
-
+    var restMessage: String?
+    var isDestination = true
+    
     // MARK: Overrides
     
     override class func cellLayoutClass(forItemType type: String) -> Swift.AnyClass? {
@@ -102,10 +105,6 @@ class ChatViewController: NOCChatViewController, UINavigationControllerDelegate,
         let reachability = note.object as! Reachability
         
         if reachability.isReachable {
-            let alert = UIAlertController(title: "Test", message: "test", preferredStyle: .alert)
-            let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(okButton)
-            UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
             if reachability.isReachableViaWiFi {
                 print("Reachable via WiFi")
             } else {
@@ -325,12 +324,13 @@ extension ChatViewController: MCManagerDelegate {
     }
     
     func receivedText(text: String) {
-        let msg = Message()
-        msg.text = text
-        messageManager.fetchMessages(withChatId: self.chat.chatId) { (messages) in
-            var newMessages = messages
-            newMessages.append(msg)
-            self.addMessages(newMessages, scrollToBottom: true, animated: true)
+        if isDestination == true {
+            let msg = Message()
+            msg.text = text
+            self.addMessages([msg], scrollToBottom: true, animated: true)
+        }
+        else {
+            self.restMessage = text
         }
     }
 }
