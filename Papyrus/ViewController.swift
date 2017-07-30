@@ -10,18 +10,27 @@ import UIKit
 import MultipeerConnectivity
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
-    var isAdvertising: Bool!
+    @IBOutlet weak var textField: UITextField!
+    var mcManager: MCManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        MCManager.shared.delegate = self
-        MCManager.shared.browser.startBrowsingForPeers()
-        MCManager.shared.advertiser.startAdvertisingPeer()
-        self.isAdvertising = true
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.mcManager = MCManager()
+        self.mcManager.delegate = self
+        self.mcManager.start()
+        
+        
+    }
+    
+    @IBAction func sendPressed(_ sender: UIButton) {
+        self.mcManager.sendText(text: self.textField.text!)
+    }
     @IBAction func actionPressed(_ sender: UIBarButtonItem) {
     }
 }
@@ -35,12 +44,15 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MCManager.shared.foundPeers.count
+        guard let value = (self.mcManager?.foundPeers.count)  else {
+            return 0
+        }
+        return value
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = MCManager.shared.foundPeers[indexPath.row].displayName
+        cell?.textLabel?.text = self.mcManager?.foundPeers[indexPath.row].displayName
         return cell!
     }
 }
@@ -51,8 +63,8 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let selectedPeer = MCManager.shared.foundPeers[indexPath.row] as MCPeerID
-        MCManager.shared.browser.invitePeer(selectedPeer, to: MCManager.shared.session, withContext: nil, timeout: 20)
+        let selectedPeer = self.mcManager?.foundPeers[indexPath.row] as! MCPeerID
+        self.mcManager?.browser?.invitePeer(selectedPeer, to: (self.mcManager?.session)!, withContext: nil, timeout: 20)
     }
 }
 
@@ -67,30 +79,11 @@ extension ViewController: MCManagerDelegate {
         self.tableView.reloadData()
     }
     
-    func invitationWasReceived(peer: MCPeerID) {
-        
-        let alert = UIAlertController(title: "", message: "\(peer.displayName) wants to chat with you.", preferredStyle: UIAlertControllerStyle.alert)
-        
-        let acceptAction: UIAlertAction = UIAlertAction(title: "Accept", style: UIAlertActionStyle.default) { (alertAction) -> Void in
-            MCManager.shared.invitationHandler(true, MCManager.shared.session)
-        }
-        
-        let declineAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (alertAction) -> Void in
-            MCManager.shared.invitationHandler(false, nil)
-        }
-        
-        alert.addAction(acceptAction)
-        alert.addAction(declineAction)
-        
-        OperationQueue.main.addOperation { () -> Void in
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    func connectedWithPeer(peer: MCPeerID) {
-        OperationQueue.main.addOperation { () -> Void in
-            print("Procimo")
-//            self.performSegue(withIdentifier: "idSegueChat", sender: self)
-        }
+    func receivedText(text: String) {
+        let alert = UIAlertController(title: "Message", message: text, preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
     }
 }
+
