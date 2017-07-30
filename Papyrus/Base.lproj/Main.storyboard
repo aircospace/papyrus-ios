@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -93,12 +94,80 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="hWm-ED-lai" kind="relationship" relationship="rootViewController" id="QwA-MX-fdw"/>
+                        <segue destination="7pc-hL-lwz" kind="relationship" relationship="rootViewController" id="gIk-4j-VMs"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4U2-is-BeB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1354" y="37"/>
+            <point key="canvasLocation" x="855" y="36"/>
+        </scene>
+        <!--Papyrus-->
+        <scene sceneID="E0V-ah-ICR">
+            <objects>
+                <viewController id="7pc-hL-lwz" customClass="HomeViewController" customModule="Papyrus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="405-dq-iFf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mqj-8o-ZDR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="nbW-18-mE6">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nbW-18-mE6" id="FBU-9B-pkr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="Y4V-Jq-HAC" customClass="RoundedView" customModule="Papyrus" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="12" width="75" height="75"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="75" id="Dc9-bE-tke"/>
+                                                        <constraint firstAttribute="width" secondItem="Y4V-Jq-HAC" secondAttribute="height" multiplier="1:1" id="wBk-SE-jtd"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jean Paul Marinho" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GV-jo-sAy">
+                                                    <rect key="frame" x="91" y="39" width="276" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9GV-jo-sAy" firstAttribute="leading" secondItem="Y4V-Jq-HAC" secondAttribute="trailing" constant="8" symbolic="YES" id="0Qt-9p-khI"/>
+                                                <constraint firstItem="9GV-jo-sAy" firstAttribute="trailing" secondItem="FBU-9B-pkr" secondAttribute="trailingMargin" id="0is-It-S5y"/>
+                                                <constraint firstItem="Y4V-Jq-HAC" firstAttribute="centerY" secondItem="9GV-jo-sAy" secondAttribute="centerY" id="47q-SO-pnP"/>
+                                                <constraint firstItem="Y4V-Jq-HAC" firstAttribute="top" secondItem="FBU-9B-pkr" secondAttribute="topMargin" constant="4" id="Qbv-3X-pO0"/>
+                                                <constraint firstItem="Y4V-Jq-HAC" firstAttribute="centerY" secondItem="FBU-9B-pkr" secondAttribute="centerY" id="c5T-ie-wrr"/>
+                                                <constraint firstItem="Y4V-Jq-HAC" firstAttribute="leading" secondItem="FBU-9B-pkr" secondAttribute="leadingMargin" id="cez-TE-OBZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7pc-hL-lwz" id="HjA-ha-Zeh"/>
+                                    <outlet property="delegate" destination="7pc-hL-lwz" id="JlE-ga-97h"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Mqj-8o-ZDR" secondAttribute="trailing" id="1K1-eW-I78"/>
+                            <constraint firstItem="Mqj-8o-ZDR" firstAttribute="top" secondItem="405-dq-iFf" secondAttribute="top" id="X1f-ee-HDQ"/>
+                            <constraint firstItem="Mqj-8o-ZDR" firstAttribute="bottom" secondItem="Jar-VR-LCz" secondAttribute="bottom" id="ccu-Da-dfN"/>
+                            <constraint firstItem="Mqj-8o-ZDR" firstAttribute="leading" secondItem="405-dq-iFf" secondAttribute="leading" id="r4V-rG-sam"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jar-VR-LCz"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Papyrus" id="LFg-Ej-Nr1"/>
+                    <connections>
+                        <segue destination="hWm-ED-lai" kind="show" identifier="ToChatVC" id="OBv-or-y48"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g93-Qd-YHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1616.8" y="35.532233883058474"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="rc9-a5-SYs">
@@ -114,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9Z-qS-mz3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2004" y="38"/>
+            <point key="canvasLocation" x="2526" y="36"/>
         </scene>
     </scenes>
     <resources>
