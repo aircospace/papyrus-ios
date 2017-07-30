@@ -88,5 +88,9 @@ extension ViewController: MCManagerDelegate {
     }
     
     func connectedWithPeer(peer: MCPeerID) {
+        OperationQueue.main.addOperation { () -> Void in
+            print("Procimo")
+//            self.performSegue(withIdentifier: "idSegueChat", sender: self)
+        }
     }
 }
