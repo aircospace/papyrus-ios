@@ -26,7 +26,7 @@ class MCManager: NSObject {
     var advertiser: MCNearbyServiceAdvertiser!
     var foundPeers = [MCPeerID]()
     var invitationHandler: ((Bool, MCSession?)->Void)!
-    let serviceType = "com.akanj-papyrus"
+    let serviceType = "com-papyrus"
     var delegate: MCManagerDelegate?
     
     override init() {

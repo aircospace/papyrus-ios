@@ -12,11 +12,17 @@ import MultipeerConnectivity
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var isAdvertising: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         MCManager.shared.delegate = self
         MCManager.shared.browser.startBrowsingForPeers()
+        MCManager.shared.advertiser.startAdvertisingPeer()
+        self.isAdvertising = true
+    }
+    
+    @IBAction func actionPressed(_ sender: UIBarButtonItem) {
     }
 }
 
